@@ -1,5 +1,9 @@
+using Event_system.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
+
+builder.Services.AddDbContext<EventDbContext>();
 
 var topicsGroup = app.MapGroup("/api");
 
@@ -11,10 +15,12 @@ topicsGroup.MapDelete("/categories/{categoryId}", (int categoryId) => "DELETE");
 
 app.Run();
 
-public record CategoryDto(int Id, string Name);
+public record CategoryDto(int Id, string Name, string Description);
 
 public record CreateCategoryDto(string Name);
 
 public record UpdateCategoryDto(string Name);
 
-//Todo: Data/Entites/Db context, docker, 
+public record EventDto(int Id, string Title, string Description, DateTime StartDate, DateTime EndDate, int Price);
+
+//Todo: pasikeisti i sql server is postgresql
