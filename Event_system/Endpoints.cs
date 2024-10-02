@@ -78,38 +78,39 @@ public static class Endpoints
         //
         eventsGroup.MapPost("/events", async (int categoryId, CreateEventDto dto, EventDbContext dbContext) =>
         {
-            var @event = new Event{Title = dto.Title, Description = dto.Description, StartDate = dto.StartDate, EndDate = dto.EndDate, Price = dto.Price, categoryId = categoryId};
-            dbContext.Categories.Add(category);
+            var even = new Event{Title = dto.Title, Description = dto.Description, StartDate = DateTime.SpecifyKind(dto.StartDate, DateTimeKind.Utc),
+                EndDate = DateTime.SpecifyKind(dto.EndDate, DateTimeKind.Utc), Price = dto.Price};
+            dbContext.Events.Add(even);
     
             await dbContext.SaveChangesAsync();
     
-            return TypedResults.Created($"api/categories/{category.Id}", category.ToDto());
+            return TypedResults.Created($"api/categories/{categoryId}/events/{even.Id}", even.ToDto());
         });
-        categoryGroup.MapPut("/categories/{categoryId}", async (UpdateCategoryDto dto,int categoryId, EventDbContext dbContext) =>
+        eventsGroup.MapPut("/events/{eventId}", async (UpdateEventDto dto,int categoryId,int eventId, EventDbContext dbContext) =>
         {
-            var category = await dbContext.Categories.FindAsync(categoryId);
-            if (category == null)
+            var @event = await dbContext.Events.FindAsync(categoryId);
+            if (@event == null)
             {
                 return Results.NotFound();
             }
-            category.Description = dto.Description;
+            @event.Description = dto.Description;
     
     
-            dbContext.Categories.Update(category);
+            dbContext.Events.Update(@event);
             await dbContext.SaveChangesAsync();
     
-            return TypedResults.Ok(category.ToDto());
+            return TypedResults.Ok(@event.ToDto());
 
         });
-        categoryGroup.MapDelete("/categories/{categoryId}", async(int categoryId,EventDbContext dbContext) =>
+        eventsGroup.MapDelete("/events/{eventId}", async(int categoryId,int eventId,EventDbContext dbContext) =>
         {
-            var category = await dbContext.Categories.FindAsync(categoryId);
-            if (category == null)
+            var @event = await dbContext.Events.FindAsync(eventId);
+            if (@event == null)
             {
                 return Results.NotFound();
             }
     
-            dbContext.Categories.Remove(category);
+            dbContext.Events.Remove(@event);
             await dbContext.SaveChangesAsync();
 
             return TypedResults.NoContent();

@@ -67,8 +67,20 @@ public record UpdateCategoryDto(string Description)
 
 public record EventDto(int Id, string Title, string Description, DateTime StartDate, DateTime EndDate, int Price);
 
-public record CreateEventDto(string Title, string Description, DateTime StartDate, DateTime EndDate, int Price, int CategoryId);
-
+public record CreateEventDto(string Title, string Description, DateTime StartDate, DateTime EndDate, int Price)
+{
+    public class CreateEventDtoValidator : AbstractValidator<CreateEventDto>
+    {
+        public CreateEventDtoValidator()
+        {
+            RuleFor(x => x.Title).NotEmpty().Length(min: 3, max: 50);
+            RuleFor(x => x.Description).NotEmpty().Length(min: 5, max: 200);
+            RuleFor(x => x.StartDate).NotEmpty();
+            RuleFor(x => x.EndDate).NotEmpty();
+            RuleFor(x => x.Price).NotEmpty();
+        }
+    }
+};
 public record UpdateEventDto(string Title, string Description, DateTime StartDate, DateTime EndDate, int Price, int CategoryId);
 
 public record RatingDto(int Id, int stars);

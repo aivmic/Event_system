@@ -9,33 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc7fe9de-dc82-4cca-b469-56c241c59115" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Event_system/Endpoints.cs" afterDir="false" />
+    <list default="true" id="fc7fe9de-dc82-4cca-b469-56c241c59115" name="Changes" comment="added category apis">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Event_system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Event_system/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/Data/Entities/Rating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Data/Entities/Rating.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/Event_system.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Event_system.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event_system/Endpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Endpoints.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/ref/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/ref/Event_system.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/refint/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/refint/Event_system.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +141,7 @@
       <workItem from="1727380501778" duration="1198000" />
       <workItem from="1727556953409" duration="2359000" />
       <workItem from="1727810146813" duration="2485000" />
-      <workItem from="1727888340512" duration="7491000" />
+      <workItem from="1727888340512" duration="12144000" />
     </task>
     <task id="LOCAL-00001" summary="added docker, database migrations">
       <option name="closed" value="true" />
@@ -164,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727381331863</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added category apis">
+      <option name="closed" value="true" />
+      <created>1727896786984</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727896786984</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +171,7 @@
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="added docker, database migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="added docker, database migrations" />
+    <MESSAGE value="added category apis" />
+    <option name="LAST_COMMIT_MESSAGE" value="added category apis" />
   </component>
 </project>
