@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vcw9kGIB/f4=",
+  "dgSpecHash": "utXXdb6H16A=",
   "success": true,
   "projectFilePath": "C:\\Users\\Aivaras\\Desktop\\Saitynai\\Event_system\\Event_system\\Event_system.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Aivaras\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",
+    "C:\\Users\\Aivaras\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.10.0\\fluentvalidation.dependencyinjectionextensions.11.10.0.nupkg.sha512",
     "C:\\Users\\Aivaras\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Aivaras\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.8\\microsoft.aspnetcore.openapi.8.0.8.nupkg.sha512",
     "C:\\Users\\Aivaras\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
@@ -38,6 +40,8 @@
     "C:\\Users\\Aivaras\\.nuget\\packages\\mono.texttemplating\\3.0.0-preview-0052-g5d0f76c785\\mono.texttemplating.3.0.0-preview-0052-g5d0f76c785.nupkg.sha512",
     "C:\\Users\\Aivaras\\.nuget\\packages\\npgsql\\8.0.4\\npgsql.8.0.4.nupkg.sha512",
     "C:\\Users\\Aivaras\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.0-rc.1\\npgsql.entityframeworkcore.postgresql.9.0.0-rc.1.nupkg.sha512",
+    "C:\\Users\\Aivaras\\.nuget\\packages\\sharpgrip.fluentvalidation.autovalidation.endpoints\\1.4.0\\sharpgrip.fluentvalidation.autovalidation.endpoints.1.4.0.nupkg.sha512",
+    "C:\\Users\\Aivaras\\.nuget\\packages\\sharpgrip.fluentvalidation.autovalidation.shared\\1.4.0\\sharpgrip.fluentvalidation.autovalidation.shared.1.4.0.nupkg.sha512",
     "C:\\Users\\Aivaras\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Aivaras\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Aivaras\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

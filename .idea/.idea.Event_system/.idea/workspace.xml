@@ -10,37 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc7fe9de-dc82-4cca-b469-56c241c59115" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Event_system/Data/Entities/Category.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event_system/Data/Entities/Event.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event_system/Data/Entities/Rating.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event_system/Data/EventDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Event_system/Data/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Event_system/Endpoints.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Event_system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Event_system/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Event_system/Data/Entities/Rating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Data/Entities/Rating.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/Event_system.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Event_system.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.runtimeconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/ref/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/ref/Event_system.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/refint/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/refint/Event_system.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Event_system/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/project.packagespec.json" afterDir="false" />
@@ -70,6 +60,10 @@
     &quot;accountId&quot;: &quot;2f36b684-d5c9-4c02-a566-46eb9ea6ace7&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6c84a066806aceaae915bfbdf27cdb310221eb597e7a1c29e2e2386343f9b/IFluentValidationAutoValidationResultFactory.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -81,23 +75,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Event_system: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Event_system: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Event_system: https.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Event_system: IIS Express.executor": "Run",
+    ".NET Launch Settings Profile.Event_system: http.executor": "Run",
+    ".NET Launch Settings Profile.Event_system: https.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.smartKeys_rider",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Event_system: http">
     <configuration name="Event_system: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Event_system/Event_system.csproj" />
@@ -157,16 +151,31 @@
       <workItem from="1727287048077" duration="4864000" />
       <workItem from="1727355503516" duration="2081000" />
       <workItem from="1727377522299" duration="2500000" />
-      <workItem from="1727380501778" duration="721000" />
+      <workItem from="1727380501778" duration="1198000" />
+      <workItem from="1727556953409" duration="2359000" />
+      <workItem from="1727810146813" duration="2485000" />
+      <workItem from="1727888340512" duration="7491000" />
     </task>
+    <task id="LOCAL-00001" summary="added docker, database migrations">
+      <option name="closed" value="true" />
+      <created>1727381331863</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727381331863</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="added docker, database migrations" />
+    <option name="LAST_COMMIT_MESSAGE" value="added docker, database migrations" />
   </component>
 </project>

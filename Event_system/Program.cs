@@ -1,26 +1,78 @@
+using System.Reflection.Metadata.Ecma335;
+using Event_system;
 using Event_system.Data;
+using Event_system.Data.Entities;
+using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
+using SharpGrip.FluentValidation.AutoValidation.Endpoints.Results;
+using SharpGrip.FluentValidation.AutoValidation.Shared.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<EventDbContext>();
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+builder.Services.AddFluentValidationAutoValidation(configuration =>
+{
+    configuration.OverrideDefaultResultFactoryWith<ProblemDetailsResultFactory>();
+});
+
 var app = builder.Build();
 
-builder.Services.AddDbContext<EventDbContext>();
-
-var topicsGroup = app.MapGroup("/api");
-
-topicsGroup.MapGet("/categories", () => "GET ALL");
-topicsGroup.MapGet("/categories/{categoryId}", (int categoryId) => $"GET {categoryId}");
-topicsGroup.MapPost("/categories", (CreateCategoryDto dto) => "POST");
-topicsGroup.MapPut("/categories/{categoryId}", (UpdateCategoryDto dto,int categoryId) => "PUT");
-topicsGroup.MapDelete("/categories/{categoryId}", (int categoryId) => "DELETE");
+app.AddCategoryApi();
+app.AddEventApi();
+app.AddRatingApi();
 
 app.Run();
 
+public class ProblemDetailsResultFactory : IFluentValidationAutoValidationResultFactory
+{
+    public IResult CreateResult(EndpointFilterInvocationContext context, ValidationResult validationResult)
+    {
+        var problemDetails = new HttpValidationProblemDetails(validationResult.ToValidationProblemErrors())
+        {
+            Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+            Title = "Unprocessable Entity",
+            Status = 422,
+        };
+        return TypedResults.Problem(problemDetails);
+    }
+}
+
 public record CategoryDto(int Id, string Name, string Description);
 
-public record CreateCategoryDto(string Name);
+public record CreateCategoryDto(string Name, string Description)
+{
+    public class CreateCategoryDtoValidator : AbstractValidator<CreateCategoryDto>
+    {
+        public CreateCategoryDtoValidator()
+        {
+            RuleFor(x => x.Name).NotEmpty().Length(min: 3, max: 50);
+            RuleFor(x => x.Description).NotEmpty().Length(min: 5, max: 200);
+        }
+    }
+};
 
-public record UpdateCategoryDto(string Name);
+public record UpdateCategoryDto(string Description)
+{
+    public class UpdateCategoryDtoValidator : AbstractValidator<UpdateCategoryDto>
+    {
+        public UpdateCategoryDtoValidator()
+        {
+            RuleFor(x => x.Description).NotEmpty().Length(min: 5, max: 200);
+        }
+    }
+};
 
 public record EventDto(int Id, string Title, string Description, DateTime StartDate, DateTime EndDate, int Price);
 
-//Todo: pasikeisti i sql server is postgresql
+public record CreateEventDto(string Title, string Description, DateTime StartDate, DateTime EndDate, int Price, int CategoryId);
+
+public record UpdateEventDto(string Title, string Description, DateTime StartDate, DateTime EndDate, int Price, int CategoryId);
+
+public record RatingDto(int Id, int stars);
+
+public record CreateRatingDto(int stars);
+
+public record UpdateRatingDto(int stars);
