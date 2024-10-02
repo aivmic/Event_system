@@ -31,7 +31,7 @@ public class ProblemDetailsResultFactory : IFluentValidationAutoValidationResult
     public IResult CreateResult(EndpointFilterInvocationContext context, ValidationResult validationResult)
     {
         var problemDetails = new HttpValidationProblemDetails(validationResult.ToValidationProblemErrors())
-        {
+        { 
             Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
             Title = "Unprocessable Entity",
             Status = 422,
@@ -41,6 +41,7 @@ public class ProblemDetailsResultFactory : IFluentValidationAutoValidationResult
 }
 
 public record CategoryDto(int Id, string Name, string Description);
+ 
 
 public record CreateCategoryDto(string Name, string Description)
 {

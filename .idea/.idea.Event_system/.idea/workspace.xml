@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc7fe9de-dc82-4cca-b469-56c241c59115" name="Changes" comment="added event apis">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Event_system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Event_system/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fc7fe9de-dc82-4cca-b469-56c241c59115" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +38,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/aivmic/Event_system.git&quot;,
-    &quot;accountId&quot;: &quot;2f36b684-d5c9-4c02-a566-46eb9ea6ace7&quot;
+    &quot;accountId&quot;: &quot;de4fb656-b0d4-43c7-bea1-2a5a7eb4b84c&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -58,23 +56,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Event_system: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.Event_system: http.executor": "Run",
-    ".NET Launch Settings Profile.Event_system: https.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Event_system: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.Event_system: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.Event_system: https.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Event_system: http">
     <configuration name="Event_system: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Event_system/Event_system.csproj" />
@@ -137,7 +135,7 @@
       <workItem from="1727380501778" duration="1198000" />
       <workItem from="1727556953409" duration="2359000" />
       <workItem from="1727810146813" duration="2485000" />
-      <workItem from="1727888340512" duration="12683000" />
+      <workItem from="1727888340512" duration="12805000" />
     </task>
     <task id="LOCAL-00001" summary="added docker, database migrations">
       <option name="closed" value="true" />
@@ -163,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727901241387</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added">
+      <option name="closed" value="true" />
+      <created>1727901867783</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727901867783</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +183,7 @@
     <MESSAGE value="added docker, database migrations" />
     <MESSAGE value="added category apis" />
     <MESSAGE value="added event apis" />
-    <option name="LAST_COMMIT_MESSAGE" value="added event apis" />
+    <MESSAGE value="added" />
+    <option name="LAST_COMMIT_MESSAGE" value="added" />
   </component>
 </project>
