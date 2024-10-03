@@ -64,9 +64,13 @@ public static class Endpoints
     {
         var ratingsGroup = app.MapGroup("/api/categories/{categoryId}/events/{eventId}").AddFluentValidationAutoValidation();
         
-        ratingsGroup.MapGet("/ratings", async(EventDbContext dbContext) =>
+        ratingsGroup.MapGet("/ratings", async(int eventId, EventDbContext dbContext) =>
         {
-            return (await dbContext.Ratings.ToListAsync()).Select(x => x.ToDto());
+            var ratings = await dbContext.Ratings
+                .Where(r => r.Event.Id == eventId)
+                .ToListAsync();
+            
+            return ratings.Select(x => x.ToDto());
         });
         
         ratingsGroup.MapGet("/ratings/{ratingId}", async (int ratingId, EventDbContext dbContext) =>
@@ -77,11 +81,15 @@ public static class Endpoints
         
         ratingsGroup.MapPost("/ratings", async (int categoryId,int eventId,CreateRatingDto dto, EventDbContext dbContext) =>
         {
+            var category = await dbContext.Categories.FindAsync(categoryId);
             var rating = new Rating { Stars = dto.Stars, Event = await dbContext.Events.FindAsync(eventId)};
             dbContext.Ratings.Add(rating);
-    
+            if(category == null || rating.Event == null)
+            {
+                return Results.NotFound();
+            }
             await dbContext.SaveChangesAsync();
-    
+            
             return TypedResults.Created($"api/categories/{categoryId}/events/{eventId}/ratings/{rating.Id}", rating.ToDto());
         });
         ratingsGroup.MapPut("/ratings/{ratingId}", async (UpdateRatingDto dto,int categoryId,int eventId,int ratingId, EventDbContext dbContext) =>
@@ -116,9 +124,13 @@ public static class Endpoints
     {
         var eventsGroup = app.MapGroup("/api/categories/{categoryId}").AddFluentValidationAutoValidation();
         
-        eventsGroup.MapGet("/events", async(EventDbContext dbContext) =>
+        eventsGroup.MapGet("/events", async(int categoryId, EventDbContext dbContext) =>
         {
-            return (await dbContext.Events.ToListAsync()).Select(x => x.ToDto());
+            var ratings = await dbContext.Events
+                .Where(r => r.Category.Id == categoryId)
+                .ToListAsync();
+            
+            return ratings.Select(x => x.ToDto());
         });
         
         eventsGroup.MapGet("/events/{eventId}", async (int categoryId, int eventId, EventDbContext dbContext) =>
@@ -130,10 +142,15 @@ public static class Endpoints
         //
         eventsGroup.MapPost("/events", async (int categoryId, CreateEventDto dto, EventDbContext dbContext) =>
         {
+            var category = await dbContext.Categories.FindAsync(categoryId);
             var @event = new Event{Title = dto.Title, Description = dto.Description, StartDate = DateTime.SpecifyKind(dto.StartDate, DateTimeKind.Utc),
                 EndDate = DateTime.SpecifyKind(dto.EndDate, DateTimeKind.Utc), Price = dto.Price, Category = await dbContext.Categories.FindAsync(categoryId)};
             dbContext.Events.Add(@event);
     
+            if(category == null)
+            {
+                return Results.NotFound();
+            }
             await dbContext.SaveChangesAsync();
     
             return TypedResults.Created($"api/categories/{categoryId}/events/{@event.Id}", @event.ToDto());
