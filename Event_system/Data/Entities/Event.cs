@@ -7,7 +7,7 @@ public class Event
     public required string Description { get; set; }
     public required DateTime StartDate { get; set; }
     public required DateTime EndDate { get; set; }
-    public int Price { get; set; }
+    public required decimal Price { get; set; }
     
     public required Category Category { get; set; }
 

@@ -75,11 +75,8 @@ public static class Endpoints
             return rating == null ? Results.NotFound() : TypedResults.Ok(rating.ToDto());
         });
         
-        //
         ratingsGroup.MapPost("/ratings", async (int categoryId,int eventId,CreateRatingDto dto, EventDbContext dbContext) =>
         {
-            // var @event = new Event{Title = dto.Title, Description = dto.Description, StartDate = DateTime.SpecifyKind(dto.StartDate, DateTimeKind.Utc),
-            //     EndDate = DateTime.SpecifyKind(dto.EndDate, DateTimeKind.Utc), Price = dto.Price, Category = await dbContext.Categories.FindAsync(categoryId)};
             var rating = new Rating { Stars = dto.Stars, Event = await dbContext.Events.FindAsync(eventId)};
             dbContext.Ratings.Add(rating);
     
