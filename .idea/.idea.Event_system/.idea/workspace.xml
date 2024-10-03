@@ -9,39 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc7fe9de-dc82-4cca-b469-56c241c59115" name="Changes" comment="added validation">
+    <list default="true" id="fc7fe9de-dc82-4cca-b469-56c241c59115" name="Changes" comment="added swagger OpenApi generator function">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Event_system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Event_system/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/Data/Entities/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Data/Entities/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/Endpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Endpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/Event_system.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Event_system.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/Migrations/EventDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Migrations/EventDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Event_system.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Microsoft.OpenApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Microsoft.OpenApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/Event_system.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/ref/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/ref/Event_system.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/refint/Event_system.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Debug/net8.0/refint/Event_system.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/Event_system.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event_system/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Event_system/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +140,7 @@
       <workItem from="1727810146813" duration="2485000" />
       <workItem from="1727888340512" duration="12805000" />
       <workItem from="1727902317284" duration="325000" />
-      <workItem from="1727949421906" duration="9743000" />
+      <workItem from="1727949421906" duration="11064000" />
     </task>
     <task id="LOCAL-00001" summary="added docker, database migrations">
       <option name="closed" value="true" />
@@ -229,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727952515696</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added swagger OpenApi generator function">
+      <option name="closed" value="true" />
+      <created>1727966927583</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1727966927583</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +224,8 @@
     <MESSAGE value="add" />
     <MESSAGE value="Added ratings api" />
     <MESSAGE value="added validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added validation" />
+    <MESSAGE value="added swagger OpenApi generator function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added swagger OpenApi generator function" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
