@@ -60,6 +60,61 @@ public static class Endpoints
         });
     }
 
+    public static void AddRatingApi(this WebApplication app)
+    {
+        var ratingsGroup = app.MapGroup("/api/categories/{categoryId}/events/{eventId}").AddFluentValidationAutoValidation();
+        
+        ratingsGroup.MapGet("/ratings", async(EventDbContext dbContext) =>
+        {
+            return (await dbContext.Ratings.ToListAsync()).Select(x => x.ToDto());
+        });
+        
+        ratingsGroup.MapGet("/ratings/{ratingId}", async (int ratingId, EventDbContext dbContext) =>
+        {
+            var rating = await dbContext.Ratings.FindAsync(ratingId);
+            return rating == null ? Results.NotFound() : TypedResults.Ok(rating.ToDto());
+        });
+        
+        //
+        ratingsGroup.MapPost("/ratings", async (int categoryId,int eventId,CreateRatingDto dto, EventDbContext dbContext) =>
+        {
+            // var @event = new Event{Title = dto.Title, Description = dto.Description, StartDate = DateTime.SpecifyKind(dto.StartDate, DateTimeKind.Utc),
+            //     EndDate = DateTime.SpecifyKind(dto.EndDate, DateTimeKind.Utc), Price = dto.Price, Category = await dbContext.Categories.FindAsync(categoryId)};
+            var rating = new Rating { Stars = dto.Stars, Event = await dbContext.Events.FindAsync(eventId)};
+            dbContext.Ratings.Add(rating);
+    
+            await dbContext.SaveChangesAsync();
+    
+            return TypedResults.Created($"api/categories/{categoryId}/events/{eventId}/ratings/{rating.Id}", rating.ToDto());
+        });
+        ratingsGroup.MapPut("/ratings/{ratingId}", async (UpdateRatingDto dto,int categoryId,int eventId,int ratingId, EventDbContext dbContext) =>
+        {
+            var rating = await dbContext.Ratings.FindAsync(ratingId);
+            if (rating == null)
+            {
+                return Results.NotFound();
+            }
+            rating.Stars = dto.Stars;
+            
+            dbContext.Ratings.Update(rating);
+            await dbContext.SaveChangesAsync();
+    
+            return TypedResults.Ok(rating.ToDto());
+        });
+        ratingsGroup.MapDelete("/ratings/{ratingId}", async(int categoryId,int ratingId,EventDbContext dbContext) =>
+        {
+            var rating = await dbContext.Ratings.FindAsync(ratingId);
+            if (rating == null)
+            {
+                return Results.NotFound();
+            }
+    
+            dbContext.Ratings.Remove(rating);
+            await dbContext.SaveChangesAsync();
+
+            return TypedResults.NoContent();
+        });
+    }
     public static void AddEventApi(this WebApplication app)
     {
         var eventsGroup = app.MapGroup("/api/categories/{categoryId}").AddFluentValidationAutoValidation();
@@ -78,29 +133,27 @@ public static class Endpoints
         //
         eventsGroup.MapPost("/events", async (int categoryId, CreateEventDto dto, EventDbContext dbContext) =>
         {
-            var even = new Event{Title = dto.Title, Description = dto.Description, StartDate = DateTime.SpecifyKind(dto.StartDate, DateTimeKind.Utc),
-                EndDate = DateTime.SpecifyKind(dto.EndDate, DateTimeKind.Utc), Price = dto.Price};
-            dbContext.Events.Add(even);
+            var @event = new Event{Title = dto.Title, Description = dto.Description, StartDate = DateTime.SpecifyKind(dto.StartDate, DateTimeKind.Utc),
+                EndDate = DateTime.SpecifyKind(dto.EndDate, DateTimeKind.Utc), Price = dto.Price, Category = await dbContext.Categories.FindAsync(categoryId)};
+            dbContext.Events.Add(@event);
     
             await dbContext.SaveChangesAsync();
     
-            return TypedResults.Created($"api/categories/{categoryId}/events/{even.Id}", even.ToDto());
+            return TypedResults.Created($"api/categories/{categoryId}/events/{@event.Id}", @event.ToDto());
         });
         eventsGroup.MapPut("/events/{eventId}", async (UpdateEventDto dto,int categoryId,int eventId, EventDbContext dbContext) =>
         {
-            var @event = await dbContext.Events.FindAsync(categoryId);
+            var @event = await dbContext.Events.FindAsync(eventId);
             if (@event == null)
             {
                 return Results.NotFound();
             }
             @event.Description = dto.Description;
-    
-    
+            
             dbContext.Events.Update(@event);
             await dbContext.SaveChangesAsync();
     
             return TypedResults.Ok(@event.ToDto());
-
         });
         eventsGroup.MapDelete("/events/{eventId}", async(int categoryId,int eventId,EventDbContext dbContext) =>
         {
@@ -115,9 +168,5 @@ public static class Endpoints
 
             return TypedResults.NoContent();
         });
-    }
-    public static void AddRatingApi(this WebApplication app)
-    {
-        
     }
 }

@@ -82,10 +82,19 @@ public record CreateEventDto(string Title, string Description, DateTime StartDat
         }
     }
 };
-public record UpdateEventDto(string Title, string Description, DateTime StartDate, DateTime EndDate, int Price, int CategoryId);
+public record UpdateEventDto(string Title, string Description, DateTime StartDate, DateTime EndDate, int Price, int CategoryId)
+{
+    public class UpdateEventDtoValidator : AbstractValidator<CreateEventDto>
+    {
+        public UpdateEventDtoValidator()
+        {
+            RuleFor(x => x.Description).NotEmpty().Length(min: 5, max: 200);
+        }
+    }
+}
 
-public record RatingDto(int Id, int stars);
+public record RatingDto(int Id, int Stars);
 
-public record CreateRatingDto(int stars);
+public record CreateRatingDto(int Stars);
 
-public record UpdateRatingDto(int stars);
+public record UpdateRatingDto(int Stars);
