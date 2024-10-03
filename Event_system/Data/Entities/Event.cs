@@ -9,7 +9,7 @@ public class Event
     public required DateTime EndDate { get; set; }
     public int Price { get; set; }
     
-    public Category Category { get; set; }
+    public required Category Category { get; set; }
 
     public EventDto ToDto()
     {

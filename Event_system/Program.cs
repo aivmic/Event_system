@@ -95,6 +95,24 @@ public record UpdateEventDto(string Title, string Description, DateTime StartDat
 
 public record RatingDto(int Id, int Stars);
 
-public record CreateRatingDto(int Stars);
+public record CreateRatingDto(int Stars)
+{
+    public class CreateRatingDtoValidator : AbstractValidator<CreateRatingDto>
+    {
+        public CreateRatingDtoValidator()
+        {
+            RuleFor(x => x.Stars).InclusiveBetween(1, 5);
+        }
+    }
+}
 
-public record UpdateRatingDto(int Stars);
+public record UpdateRatingDto(int Stars)
+{
+    public class UpdateRatingDtoValidator : AbstractValidator<CreateRatingDto>
+    {
+        public UpdateRatingDtoValidator()
+        {
+            RuleFor(x => x.Stars).InclusiveBetween(1, 5);
+        }
+    }
+}  

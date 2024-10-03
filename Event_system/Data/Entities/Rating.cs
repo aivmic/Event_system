@@ -4,7 +4,7 @@ public class Rating
 {
     public int Id { get; set; }
     public required int Stars { get; set; }
-    public Event Event { get; set; }
+    public required Event Event { get; set; }
     
     public RatingDto ToDto()
     {
