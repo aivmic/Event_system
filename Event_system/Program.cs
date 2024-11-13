@@ -1,7 +1,16 @@
+using System.Text;
 using Event_system;
+using Event_system.Auth;
+using Event_system.Auth.Model;
 using Event_system.Data;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
 using SharpGrip.FluentValidation.AutoValidation.Endpoints.Results;
 using SharpGrip.FluentValidation.AutoValidation.Shared.Extensions;
@@ -11,6 +20,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<EventDbContext>();
+builder.Services.AddResponseCaching();
+builder.Services.AddTransient<JwtTokenService>();
+builder.Services.AddScoped<AuthSeeder>();
+builder.Services.AddTransient<SessionService>();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddFluentValidationAutoValidation(configuration =>
 {
@@ -27,7 +40,35 @@ builder.Services.AddSwaggerGen(c =>
     c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 });
 
+//AUTH
+builder.Services.AddIdentity<EventUser, IdentityRole>()
+    .AddEntityFrameworkStores<EventDbContext>()
+    .AddDefaultTokenProviders();
+
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.MapInboundClaims = false;
+    options.TokenValidationParameters.ValidAudience = builder.Configuration["JWT:ValidAudience"];
+    options.TokenValidationParameters.ValidIssuer = builder.Configuration["JWT:ValidIssuer"];
+    options.TokenValidationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]));
+});
+ 
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
+
+using var scope = app.Services.CreateScope();
+//var dbContext = scope.ServiceProvider.GetRequiredService<EventDbContext>();
+var dbSeeder = scope.ServiceProvider.GetRequiredService<AuthSeeder>();
+
+await dbSeeder.SeedAsync();
+
 
 // Register the endpoints from Endpoints.cs
 // Endpoints.AddCategoryApi(app);
@@ -49,17 +90,18 @@ if (app.Environment.IsDevelopment())
         c.RoutePrefix = string.Empty;
     });
 }
-
-//OpenApi
-app.UseHttpsRedirection();
-app.UseAuthorization();
-app.MapControllers();
-
 app.AddCategoryApi();
 app.AddEventApi();
 app.AddRatingApi();
+app.AddAuthApi();
+//OpenApi
 
+app.MapControllers();
+app.UseResponseCaching();
+app.UseAuthentication();
+app.UseAuthorization();
 app.Run();
+
 
 public class ProblemDetailsResultFactory : IFluentValidationAutoValidationResultFactory
 {

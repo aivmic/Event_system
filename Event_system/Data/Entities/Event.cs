@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+using Event_system.Auth.Model;
+
 namespace Event_system.Data.Entities;
 
 public class Event
@@ -11,6 +14,9 @@ public class Event
     
     public required Category Category { get; set; }
 
+    [Required]
+    public required string UserId { get; set; }
+    public EventUser User { get; set; }
     public EventDto ToDto()
     {
         return new EventDto(Id,Title, Description, StartDate, EndDate, Price);

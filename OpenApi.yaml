@@ -459,3 +459,32 @@ components:
           maximum: 5
       required:
         - stars
+
+  responses:
+    singleTopic:
+      description: A category
+      content:
+        application/json:
+          schema:
+            type: object
+            items:
+              $ref: "#/components/schemas/topic"
+          example:
+            - id: 1
+              title: "OpenAPI Best Practices"
+              description: "Discussion about best practices when using OpenAPI"
+    unprocessableEntity:
+      description: Unprocessable entity response
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            items:
+              $ref: "#/components/schemas/problemDetails"
+          example:
+            type: "https://tools.ietf.org/html/rfc4918#section-11.2"
+            title: "Unprocessable Entity"
+            status: 422
+            errors:
+              Name:
+                - "'Name' must not be empty."

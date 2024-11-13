@@ -22,7 +22,7 @@ public static class Endpoints
         });
         categoryGroup.MapPost("/categories", async (CreateCategoryDto dto, EventDbContext dbContext) =>
         {
-            var category = new Category{Name = dto.Name, Description = dto.Description};
+            var category = new Category{Name = dto.Name, Description = dto.Description, UserId = ""};
             dbContext.Categories.Add(category);
     
             await dbContext.SaveChangesAsync();
@@ -82,7 +82,7 @@ public static class Endpoints
         ratingsGroup.MapPost("/ratings", async (int categoryId,int eventId,CreateRatingDto dto, EventDbContext dbContext) =>
         {
             var category = await dbContext.Categories.FindAsync(categoryId);
-            var rating = new Rating { Stars = dto.Stars, Event = await dbContext.Events.FindAsync(eventId)};
+            var rating = new Rating { Stars = dto.Stars, Event = await dbContext.Events.FindAsync(eventId), UserId = ""};
             dbContext.Ratings.Add(rating);
             if(category == null || rating.Event == null)
             {
@@ -144,7 +144,7 @@ public static class Endpoints
         {
             var category = await dbContext.Categories.FindAsync(categoryId);
             var @event = new Event{Title = dto.Title, Description = dto.Description, StartDate = DateTime.SpecifyKind(dto.StartDate, DateTimeKind.Utc),
-                EndDate = DateTime.SpecifyKind(dto.EndDate, DateTimeKind.Utc), Price = dto.Price, Category = await dbContext.Categories.FindAsync(categoryId)};
+                EndDate = DateTime.SpecifyKind(dto.EndDate, DateTimeKind.Utc), Price = dto.Price, Category = await dbContext.Categories.FindAsync(categoryId), UserId = ""};
             dbContext.Events.Add(@event);
     
             if(category == null)
