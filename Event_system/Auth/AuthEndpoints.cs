@@ -90,7 +90,7 @@ public static class AuthEndpoints
             
             httpContext.Response.Cookies.Append("RefreshToken", refreshToken, cookieOptions);
 
-            return Results.Ok(new SuccessfulLoginDto(accessToken));
+            return Results.Ok(new SuccessfulLoginDto(accessToken, refreshToken));
         });
 
         app.MapPost("api/accessToken", async (UserManager<EventUser> userManager,JwtTokenService jwtTokenService, 
@@ -143,7 +143,7 @@ public static class AuthEndpoints
             
             await sessionService.ExtendSessionAsync(sessionIdAsGuid, newRefreshToken, expiresAt);
             
-            return Results.Ok(new SuccessfulLoginDto(accessToken));
+            return Results.Ok(new SuccessfulLoginDto(accessToken, refreshToken));
         });
         
         app.MapPost("api/logout", async (UserManager<EventUser> userManager,JwtTokenService jwtTokenService, SessionService sessionService, HttpContext httpContext) =>
@@ -174,5 +174,6 @@ public static class AuthEndpoints
     public record RegisterUserDto(string UserName, string Email, string Password);
     public record UserDto(string UserId, string Username, string Email);
     public record LoginDto(string UserName, string Password);
-    public record SuccessfulLoginDto(string AccessToken);
+
+    public record SuccessfulLoginDto(string AccessToken, string RefreshToken);
 }
