@@ -14,7 +14,6 @@ public static class AuthEndpoints
         //register
         app.MapPost("api/accounts", async (UserManager<EventUser> userManager, [FromBody] RegisterUserDto dto, EventDbContext _dbContext) =>
         {
-            //check user exists
             var user = await userManager.FindByNameAsync(dto.UserName);
             if (user != null) 
                 return Results.UnprocessableEntity("Username already taken");
@@ -24,17 +23,7 @@ public static class AuthEndpoints
                 Email = dto.Email,
                 UserName = dto.UserName,
             };
-            
-            // TODO: wrap in transaction 
-            /*var createUserResult = await userManager.CreateAsync(newUser, dto.Password);
-            if(!createUserResult.Succeeded)
-                return Results.UnprocessableEntity();
-            
-            await userManager.AddToRoleAsync(newUser, ForumRoles.ForumUser);
 
-            return Results.Created();*/
-            // ----
-            // Transaction
             using var transaction = await _dbContext.Database.BeginTransactionAsync();
 
             var createUserResult = await userManager.CreateAsync(newUser, dto.Password);
@@ -53,8 +42,6 @@ public static class AuthEndpoints
             }
 
             await transaction.CommitAsync();
-            // ----
-
             return Results.Created("api/login", new UserDto(newUser.Id, newUser.UserName, newUser.Email));
         });
         
@@ -62,7 +49,6 @@ public static class AuthEndpoints
         app.MapPost("api/login", async ( UserManager<EventUser> userManager, JwtTokenService jwtTokenService, 
             SessionService sessionService, HttpContext httpContext, [FromBody] LoginDto dto)=>
         {
-            //check user
             var user = await userManager.FindByNameAsync(dto.UserName);
             if (user == null) 
                 return Results.UnprocessableEntity("Username does not exist");
@@ -85,7 +71,7 @@ public static class AuthEndpoints
                 HttpOnly = true,
                 SameSite = SameSiteMode.Lax,
                 Expires = expiresAt,
-                Secure = false //=> should be true
+                Secure = false // for learning purposes
             };
             
             httpContext.Response.Cookies.Append("RefreshToken", refreshToken, cookieOptions);
@@ -136,7 +122,7 @@ public static class AuthEndpoints
                 HttpOnly = true,
                 SameSite = SameSiteMode.Lax,
                 Expires = expiresAt,
-                Secure = false //=> should be true
+                Secure = false // for learning purposes
             };
             
             httpContext.Response.Cookies.Append("RefreshToken", newRefreshToken, cookieOptions);

@@ -8,9 +8,6 @@ using FluentValidation.Results;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
 using SharpGrip.FluentValidation.AutoValidation.Endpoints.Results;
 using SharpGrip.FluentValidation.AutoValidation.Shared.Extensions;
@@ -32,15 +29,12 @@ builder.Services.AddFluentValidationAutoValidation(configuration =>
 
 builder.Services.AddEndpointsApiExplorer();
 
-// Add Swagger/OpenAPI services
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-    // Resolve conflicts temporarily
     c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 });
 
-//AUTH
 builder.Services.AddIdentity<EventUser, IdentityRole>()
     .AddEntityFrameworkStores<EventDbContext>()
     .AddDefaultTokenProviders();
@@ -64,26 +58,19 @@ builder.Services.AddAuthorization();
 var app = builder.Build();
 
 using var scope = app.Services.CreateScope();
-//var dbContext = scope.ServiceProvider.GetRequiredService<EventDbContext>();
 var dbSeeder = scope.ServiceProvider.GetRequiredService<AuthSeeder>();
 
 await dbSeeder.SeedAsync();
 
-
-// Register the endpoints from Endpoints.cs
-// Endpoints.AddCategoryApi(app);
-// Endpoints.AddEventApi(app);
-// Endpoints.AddRatingApi(app);
 
 // Enable middleware to serve generated Swagger as a JSON endpoint.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger(c =>
     {
-        c.SerializeAsV2 = false; // Serialize as OpenAPI 3.0
+        c.SerializeAsV2 = false;
     });
     
-    // Serve Swagger UI at the root URL /swagger
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
@@ -94,7 +81,6 @@ app.AddCategoryApi();
 app.AddEventApi();
 app.AddRatingApi();
 app.AddAuthApi();
-//OpenApi
 
 app.MapControllers();
 app.UseResponseCaching();
